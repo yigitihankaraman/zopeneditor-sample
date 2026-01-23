@@ -1,23 +1,20 @@
 ################################################################
 # LICENSED MATERIALS - PROPERTY OF IBM
 # "RESTRICTED MATERIALS OF IBM"
-# (C) COPYRIGHT IBM CORPORATION 2025. ALL RIGHTS RESERVED
+# (C) COPYRIGHT IBM CORPORATION 2026. ALL RIGHTS RESERVED
 # US GOVERNMENT USERS RESTRICTED RIGHTS - USE, DUPLICATION,
 # OR DISCLOSURE RESTRICTED BY GSA ADP SCHEDULE
 # CONTRACT WITH IBM CORPORATION
 ################################################################
 ---
 rules:
-  # ZCodeScan built-in rules
+  # ZCodeScan Cobol Rules
   - id: zcodescan.cobol.rules.ProgramIdRule
-    severity: INFO
-    parameters:
-      - name: "Test"
-        value: "Test"
+    severity: MEDIUM
   - id: zcodescan.cobol.rules.CallSyntaxRule
-    severity: INFO
+    severity: MEDIUM
   - id: zcodescan.cobol.rules.SqlWhereRule
-    severity: HIGH
+    severity: MEDIUM
     statements:
       - name: "Select"
         value: true
@@ -26,7 +23,7 @@ rules:
       - name: "Update"
         value: true
   - id: zcodescan.cobol.rules.RequireEndClauseRule
-    severity: HIGH
+    severity: MEDIUM
     statements:
       - name: "If"
         value: true
@@ -41,7 +38,7 @@ rules:
   - id: zcodescan.cobol.rules.AcceptRule
     severity: INFO
   - id: zcodescan.cobol.rules.GotoRule
-    severity: INFO
+    severity: MEDIUM
   - id: zcodescan.cobol.rules.GotoParagraphRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.UnprotectedAuthCredentialRule
@@ -63,9 +60,9 @@ rules:
   - id: zcodescan.cobol.rules.PerformWithThroughRule
     severity: MEDIUM
   - id: "zcodescan.cobol.rules.InitializeRule"
-    severity: MEDIUM
+    severity: INFO
   - id: "zcodescan.cobol.rules.EvaluateNotIfRule"
-    severity: MEDIUM
+    severity: INFO
   - id: "zcodescan.cobol.rules.IfElseRule"
     severity: MEDIUM
   - id: zcodescan.cobol.rules.CancelRule
@@ -84,12 +81,12 @@ rules:
     severity: MEDIUM
     statements:
       - name: "NestingLimit"
-        value: 2
+        value: 6
   - id: zcodescan.cobol.rules.FileNameConventionRule
     severity: MEDIUM
     statements:
       - name: "ConventionMask"
-        value: "ACT.*"
+        value: "SAM.*"
   - id: zcodescan.cobol.rules.FiveBasedLevelNumbersRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.ProcedureRule
@@ -108,17 +105,17 @@ rules:
   - id: zcodescan.cobol.rules.Comp3PictureClauseRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.AcceptFromConsoleRule
-    severity: MEDIUM
+    severity: HIGH
   - id: zcodescan.cobol.rules.OccursDependingOnRule
-    severity: MEDIUM
+    severity: HIGH
   - id: zcodescan.cobol.rules.SqlAvoidSelectStarRule
-    severity: MEDIUM
+    severity: HIGH
   - id: zcodescan.cobol.rules.SqlDeclareCursorOrderByRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.NextSentenceRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.XMLParseRule
-    severity: MEDIUM
+    severity: HIGH
   - id: zcodescan.cobol.rules.BinarySubscriptRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.CorrespondingRule
@@ -136,7 +133,7 @@ rules:
   - id: zcodescan.cobol.rules.NextSentenceInScopedRangeRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.CopybookRule
-    severity: MEDIUM
+    severity: HIGH
     statements:
       - name: CopybookName
         value: lgpolicy
@@ -155,17 +152,17 @@ rules:
   - id: zcodescan.cobol.rules.CopySuppressRule
     severity: MEDIUM
   - id: zcodescan.cobol.rules.SectionCommentRule
-    severity: MEDIUM
+    severity: LOW
     statements:
       - name: LOCATION
         value: 0
   - id: zcodescan.cobol.rules.ParagraphCommentRule
-    severity: MEDIUM
+    severity: LOW
     statements:
       - name: LOCATION
         value: 0
   - id: zcodescan.cobol.rules.StaticCallNameRule
-    severity: MEDIUM
+    severity: HIGH
     statements:
       - name: PROGRAM_NAME
         value: TEST
@@ -182,7 +179,7 @@ rules:
       - name: ProcessDirective
         value: true
       - name: CopyDirective
-        value: true
+        value: false
       - name: ReplaceDirective
         value: true
       - name: ServicelabelDirective
@@ -191,3 +188,27 @@ rules:
         value: true
       - name: TitleDirective
         value: true
+
+  # ZCodeScan PL/1 Rules
+  - id: zcodescan.pli.rules.ProcedureFilenameMatchRule
+    severity: MEDIUM
+  - id: zcodescan.pli.rules.FixedDecimalPrecisionRule
+    severity: INFO
+  - id: zcodescan.pli.rules.ImplicitDeclarationRule
+    severity: HIGH
+  - id: zcodescan.pli.rules.GoToRule
+    severity: HIGH
+  - id: zcodescan.pli.rules.FactorAttribRule
+    severity: MEDIUM
+  - id: zcodescan.pli.rules.LoopControlRule
+    severity: MEDIUM
+  - id: zcodescan.pli.rules.SingleVariableRule
+    severity: MEDIUM
+  - id: zcodescan.pli.rules.ArithmeticExprWithoutBitTypeRule
+    severity: HIGH
+  - id: zcodescan.pli.rules.DotQualRefsRule
+    severity: HIGH
+  - id: zcodescan.pli.rules.AvoidProcessDirectiveRule
+    severity: LOW
+  - id: zcodescan.pli.rules.ArithmeticExprWithoutCharacterTypeRule
+    severity: HIGH

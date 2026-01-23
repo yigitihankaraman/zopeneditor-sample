@@ -1,0 +1,17 @@
+################################################################
+# LICENSED MATERIALS - PROPERTY OF IBM
+# "RESTRICTED MATERIALS OF IBM"
+# (C) COPYRIGHT IBM CORPORATION 2026. ALL RIGHTS RESERVED
+# US GOVERNMENT USERS RESTRICTED RIGHTS - USE, DUPLICATION,
+# OR DISCLOSURE RESTRICTED BY GSA ADP SCHEDULE
+# CONTRACT WITH IBM CORPORATION
+################################################################
+---
+rules:
+  # Selection of ZCodeScan built-in rules for the PSAM PL/I application
+  - id: zcodescan.pli.rules.GoToRule
+    severity: HIGH
+  - id: zcodescan.pli.rules.FixedDecimalPrecisionRule
+    severity: INFO
+  - id: zcodescan.pli.rules.SingleVariableRule
+    severity: MEDIUM
