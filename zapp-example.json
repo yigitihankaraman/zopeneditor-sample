@@ -1,7 +1,7 @@
 {
   "name": "sam",
-  "description": "For IBM Z Open Editor 6.2.0 or newer. Wazi's code samples in COBOL, PL/I, HLASM, REXX, JCL.",
-  "version": "6.2.0",
+  "description": "For IBM Z Open Editor 6.3.0 or newer. Wazi's code samples in COBOL, PL/I, HLASM, REXX, JCL.",
+  "version": "6.3.0",
   "author": {
     "name": "IBM CORPORATION"
   },
@@ -157,7 +157,7 @@
       "settings": {
         "command": "$DBB_HOME/bin/dbb build",
         "lifecycle": "user",
-        "lifecycleArgs": ["--hlq ${dbbHlq}"],
+        "lifecycleArgs": ["--hlq ${dbbHlq}", "--errPrefix ${errPrefix}"],
         "additionalDependencies": ["dbb-app.yaml"],
         "logFilePatterns": ["*.log", "BuildReport.html", "*.json"]
       }
@@ -174,7 +174,8 @@
           "--workspace ${dbbWorkspace}",
           "--application ${application}",
           "--hlq ${dbbHlq}",
-          "--outDir ${dbbLogDir}"
+          "--outDir ${dbbLogDir}",
+          "--errPrefix ${errPrefix}"
         ],
         "additionalDependencies": ["application-conf"],
         "logFilePatterns": ["${buildFile.basename}.log", "BuildReport.*"]

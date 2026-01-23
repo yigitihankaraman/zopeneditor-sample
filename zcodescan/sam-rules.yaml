@@ -8,7 +8,7 @@
 ################################################################
 ---
 rules:
-  # Selection of ZCodeScan built-in rules for the SAM application
+  # Selection of ZCodeScan built-in rules for the SAM COBOL application
   - id: zcodescan.cobol.rules.AcceptDateTimeRule
     severity: MEDIUM
   - id: "zcodescan.cobol.rules.EvaluateNotIfRule"

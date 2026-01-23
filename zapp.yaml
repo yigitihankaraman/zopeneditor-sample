@@ -1,15 +1,15 @@
 ################################################################
 # LICENSED MATERIALS - PROPERTY OF IBM
 # "RESTRICTED MATERIALS OF IBM"
-# (C) COPYRIGHT IBM CORPORATION 2020, 2025. ALL RIGHTS RESERVED
+# (C) COPYRIGHT IBM CORPORATION 2020, 2026. ALL RIGHTS RESERVED
 # US GOVERNMENT USERS RESTRICTED RIGHTS - USE, DUPLICATION,
 # OR DISCLOSURE RESTRICTED BY GSA ADP SCHEDULE
 # CONTRACT WITH IBM CORPORATION
 ################################################################
 
 name: sam
-description: For IBM Z Open Editor 6.2.0 or newer. Wazi's code samples in COBOL, PL/I, HLASM, REXX, JCL.
-version: 6.2.0
+description: For IBM Z Open Editor 6.3.0 or newer. Wazi's code samples in COBOL, PL/I, HLASM, REXX, JCL.
+version: 6.3.0
 author:
   name: IBM CORPORATION
 
@@ -118,6 +118,7 @@ profiles:
         - type: local
           locations:
             - "zcodescan/sam-rules.yaml"
+            - "zcodescan/psam-rules.yaml"
       customRuleModels:
         - type: local
           locations:
@@ -131,6 +132,7 @@ profiles:
       lifecycle: user
       lifecycleArgs:
         - "--hlq ${dbbHlq}"
+        - "--errPrefix ${errPrefix}" # will be ignored if Advanced Features are not available
       additionalDependencies:
         - "dbb-app.yaml"
       logFilePatterns:
@@ -151,6 +153,7 @@ profiles:
         - "--application ${application}"
         - "--hlq ${dbbHlq}"
         - "--outDir ${dbbLogDir}"
+        - "--errPrefix ${errPrefix}" # will be ignored if Advanced Features are not available
         # - "--dependencyFile ${dependencyFile}" # use with older versions of dbb-zappbuild
       additionalDependencies:
         - application-conf
