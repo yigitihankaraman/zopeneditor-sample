@@ -22,3 +22,14 @@ propertyGroups:
         locations:
           - cust
           - trans
+  - name: hlasm-zapp
+    language: hlasm
+    libraries:
+      - name: syslib
+        type: local
+        locations:
+          - "ASM/ASMCPY"
+      - name: maclib
+        type: local
+        locations:
+          - "ASM/ASMMAC"
