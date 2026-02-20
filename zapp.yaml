@@ -95,6 +95,7 @@ profiles:
       lifecycle: user
       lifecycleArgs:
         - "--hlq ${dbbHlq}"
+        - "--errPrefix ${errPrefix}"
       additionalDependencies:
         - "dbb-app.yaml"
       logFilePatterns:
