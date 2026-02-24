@@ -256,7 +256,11 @@
                    CURRENT-MINUTE
                    ':'
                    CURRENT-SECOND.
+           PERFORM 001-DSP-YK.
            GOBACK.
+
+       001-DSP-YK.
+           DISPLAY "DENEME".
 
        100-PROCESS-TRANSACTIONS.
            PERFORM 710-READ-TRAN-FILE.
