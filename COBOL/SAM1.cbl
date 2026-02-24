@@ -260,7 +260,7 @@
            GOBACK.
 
        001-DSP-YK.
-           DISPLAY "DENEME".
+           DISPLAY "DENEME Yigithan".
 
        100-PROCESS-TRANSACTIONS.
            PERFORM 710-READ-TRAN-FILE.
